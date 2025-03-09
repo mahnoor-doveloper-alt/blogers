@@ -386,6 +386,24 @@ h1 {
   const customDate = ' 12 Feb  2025'; // Apni desired date yahan likho
   dateElement.textContent = `Posted on: ${customDate}`;
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const menuIcon = document.querySelector(".menu-icon");
+    const navLinks = document.querySelector(".nav-links");
+
+    menuIcon.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", function (event) {
+        if (!menuIcon.contains(event.target) && !navLinks.contains(event.target)) {
+            navLinks.classList.remove("active");
+        }
+    });
+});
+
+
+
 
   </script>
     </body>
