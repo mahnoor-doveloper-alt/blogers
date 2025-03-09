@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloggers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="#" class="logo" id="logo">Bloggers</a> <!-- Replaced MZMM Blog with Bloggers -->
+        <div class="nav-links" id="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#create-post">Create a Post</a> <!-- Link should go to the Create Post section -->
+            <a href="#footer">About</a>
+        </div>
+        <!-- Hamburger Menu Icon -->
+        <button class="menu-icon" id="menu-icon">&#9776;</button>
+    </div>
+
+
+    <style>
+      /* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Main Content Container */
+.content-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 10px;
+  
+  background-image: linear-gradient(135deg, #f3f4f7, #e0e4e9);
+  transition: all 0.3s ease;
+}
+
+/* Post Header */
+.post-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: 600;
+  color: #2a2a2a;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.post-date {
+  font-size: 1.2em;
+  color: #aaa;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+/* Post Content */
+.post-summary {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.8;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.post-body {
+  font-size: 1.1em;
+  color: #444;
+  margin-bottom: 25px;
+  line-height: 1.8;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+
+
+
+/* Comment Section */
+.comments-section {
+  margin-top: 90px;
+  padding: 70px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 10px;
+  
+}
+
+.comment-table {
+  margin-bottom: 20px;
+}
+
+.comment-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.comment-author {
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 5px;
+}
+
+.comment-text {
+  padding-left: 10px;
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+.comment-form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  resize: none;
+}
+
+.comment-form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.comment-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Post Footer */
+.post-footer {
+  font-size: 1.1em;
+  color: #333;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.author-name {
+  font-weight: 500;
+  color: #007bff;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-container {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 2.2em;
+  }
+
+  .post-summary {
+    font-size: 1.1em;
+  }
+
+  .post-body {
+    font-size: 1em;
+  }
+
+  .post-footer {
+    font-size: 1em;
+  }
+}
+#comments {
+    font-family: 'Arial', sans-serif;
+    margin-top: 40px;
+    padding: 0 20px;
+}
+
+#comments h2 {
+    text-align: center;
+    font-size: 32px;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.comment-table {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.comment-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.comment-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 18px;
+    color: #3498db;
+}
+
+.date {
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+.comment {
+    font-size: 16px;
+    color: #2c3e50;
+    line-height: 1.5;
+}
+
+.comment-card p {
+    margin: 0;
+}
+
+
+    </style>
+    </head>
+    <body>
+      <!-- Main content container -->
+  <div class="content-container">
+    <header class="post-header">
+      <h1>An Unfinished Story</h1>
+      <p class="post-date" id="postDate"></p>
+    </header>
+
+    <article class="post-content">
+      <p class="post-summary">
+        Her eyes were full of longing, but the one she was waiting for never returned. Every evening, she sat at the same place where they had met for the first time...
+      </p>
+
+      
+      <p class="post-body">
+        As time passed, the days grew colder, and the evenings longer. She still held on to the hope that one day, he would return. But the days turned into months, and the months into years. The place where they had first met had become a silent witness to her loneliness, her hopes, and her unwavering wait. The days were long, but her heart remained patient, waiting for the one who promised her that he would always be there. Her heart told her to hold on, yet every evening, she found herself alone in that spot, staring at the horizon, hoping to see him return.
+      </p>
+      
+      <p class="post-body">
+        But the story didn’t end there. As fate would have it, one day, she found herself at that very spot, remembering the past, when she saw him from a distance, standing where they had once met. But now, he was not the man she remembered. Time had changed him, as it had changed her. They stood there in silence for a while, both unsure of what to say. And as they exchanged a look, they both understood that some stories are never meant to be completed. It wasn’t about who was right or wrong; it was about understanding that time moves on, and with it, some things are left behind.
+      </p>
+
+      <p class="post-body">
+        The day faded, and they parted ways once again, not as lovers, but as two people who had once shared a chapter in their lives. A chapter that was now incomplete, but still meaningful. And though their paths had diverged, that evening would always remain etched in her heart, as the day when their unfinished story came to a silent close.
+      </p>
+
+      <p class="post-body">
+
+
+        Her heart had been a silent witness to years of longing, but the pain had faded into something softer, a bittersweet acceptance. Every evening, the memories would surface, but the ache wasn't as sharp as before. The place, once filled with hope, had transformed into a quiet sanctuary for her thoughts. She no longer stared at the horizon with the same desperate yearning; 
+        instead, she gazed out, lost in reflection, as the world around her continued to change.
+      </p>
+
+      <p class="post-body">
+
+        But the story didn’t end there. As fate would have it, one day, she found herself at that very spot, remembering the past, when she saw him from a distance, standing where they had once met. But now, he was not the man she remembered. Time had changed him, as it had changed her. They stood there in silence for a while, both unsure of what to say. And as they exchanged a look, they both understood that some stories are never meant to be completed. It wasn’t about who was right or wrong; it was about understanding that time moves on, and with it, some things are left behind.
+      </p>
+
+      <p class="post-body">
+
+        Time, though unyielding, had taught her lessons—lessons about patience, resilience, and the beauty of moving forward. The days no longer felt as cold, and the evenings no longer seemed as long. She had learned to find
+         peace in her solitude, to embrace the quiet moments without the weight of expectation.
+      </p>
+      <p class="post-body">
+
+        And then, one evening, as the last rays of sunlight dipped below the horizon, she found herself sitting in the same spot again, but this time with a calm smile. The sound of footsteps approached, and once again, she saw him—older, changed, but still 
+        carrying that familiar aura she once cherished. Yet this time, there was no yearning in her eyes, no waiting.
+      </p>
+
+      <p class="post-body">
+
+        He stopped, just as he had done all those years ago, but this time their gaze met without the heavy silence. Instead, there was understanding, and in that quiet exchange, they both knew. The years had not been wasted. They had shaped them, each in their own way, 
+        and though the chapter they had once shared was closed, it had left behind a story they would both carry with them.
+      </p>
+      <p class="post-body">
+
+        They shared a smile, a moment of acknowledgment, and without a word, they parted ways once again. This time, there were no goodbyes, just an unspoken recognition that some connections, no matter how fleeting, leave behind something irreplaceable. And as she walked away,
+        she felt a gentle warmth in her heart, knowing that some stories, no matter how unfinished, had their own beauty.
+      </p>
+</article>
+</div>
+<section id="comments">
+    <h2>Comments</h2>
+    <div class="comment-table">
+        <div class="comment-card">
+            <div class="comment-header">
+                <span class="name">John Doe</span>
+                <span class="date">March 5, 2025</span>
+            </div>
+            <p class="comment">Great article, I learned a lot!</p>
+        </div>
+
+        <div class="comment-card">
+            <div class="comment-header">
+                <span class="name">Jane Smith</span>
+                <span class="date">March 4, 2025</span>
+            </div>
+            <p class="comment">Thanks for sharing your knowledge!</p>
+        </div>
+
+        <div class="comment-card">
+            <div class="comment-header">
+                <span class="name">Ali Khan</span>
+                <span class="date">March 3, 2025</span>
+            </div>
+            <p class="comment">Very informative, keep it up!</p>
+        </div>
+    </div>
+</section>
+
+<footer id="footer">
+  <div class="footer-container">
+      <div class="footer-content">
+          <div class="footer-logo">
+              <h2>MyWebsite</h2>
+              <p>Your go-to place for quality content and insights.</p>
+          </div>
+          <div class="footer-links">
+              <h3>Quick Links</h3>
+              <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Contact</a></li>
+              </ul>
+          </div>
+          <div class="footer-social">
+              <h3>Follow Us</h3>
+              <div class="social-icons">
+                  <a href="#"><i class="fab fa-facebook"></i></a>
+                  <a href="#"><i class="fab fa-linkedin"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+          </div>
+          <div class="footer-newsletter">
+              <h3>Subscribe to Our Newsletter</h3>
+              <form>
+                  <input type="email" placeholder="Enter your email" required>
+                  <button type="submit">Subscribe</button>
+              </form>
+          </div>
+      </div>
+      <div class="footer-bottom">
+          <p>&copy; 2025 MyWebsite. All Rights Reserved.</p>
+      </div>
+  </div>
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+  const dateElement = document.getElementById('postDate');
+  const customDate = ' 1 Feb  2025'; // Apni desired date yahan likho
+  dateElement.textContent = `Posted on: ${customDate}`;
+});
+
+  </script>
+    </body>
+    </html>

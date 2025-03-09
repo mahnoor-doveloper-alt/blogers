@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloggers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="#" class="logo" id="logo">Bloggers</a> <!-- Replaced MZMM Blog with Bloggers -->
+        <div class="nav-links" id="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#create-post">Create a Post</a> <!-- Link should go to the Create Post section -->
+            <a href="#footer">About</a>
+        </div>
+        <!-- Hamburger Menu Icon -->
+        <button class="menu-icon" id="menu-icon">&#9776;</button>
+    </div>
+
+
+    <style>
+      /* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Main Content Container */
+.content-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 10px;
+  
+  background-image: linear-gradient(135deg, #f3f4f7, #e0e4e9);
+  transition: all 0.3s ease;
+}
+
+/* Post Header */
+.post-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: 600;
+  color: #2a2a2a;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.post-date {
+  font-size: 1.2em;
+  color: #aaa;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+/* Post Content */
+.post-summary {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.8;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.post-body {
+  font-size: 1.1em;
+  color: #444;
+  margin-bottom: 25px;
+  line-height: 1.8;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+
+
+
+/* Comment Section */
+.comments-section {
+  margin-top: 90px;
+  padding: 70px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 10px;
+  
+}
+
+.comment-table {
+  margin-bottom: 20px;
+}
+
+.comment-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.comment-author {
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 5px;
+}
+
+.comment-text {
+  padding-left: 10px;
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+.comment-form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  resize: none;
+}
+
+.comment-form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.comment-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Post Footer */
+.post-footer {
+  font-size: 1.1em;
+  color: #333;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.author-name {
+  font-weight: 500;
+  color: #007bff;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-container {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 2.2em;
+  }
+
+  .post-summary {
+    font-size: 1.1em;
+  }
+
+  .post-body {
+    font-size: 1em;
+  }
+
+  .post-footer {
+    font-size: 1em;
+  }
+}
+#comments {
+    font-family: 'Arial', sans-serif;
+    margin-top: 40px;
+    padding: 0 20px;
+}
+
+#comments h2 {
+    text-align: center;
+    font-size: 32px;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.comment-table {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.comment-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.comment-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 18px;
+    color: #3498db;
+}
+
+.date {
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+.comment {
+    font-size: 16px;
+    color: #2c3e50;
+    line-height: 1.5;
+}
+
+.comment-card p {
+    margin: 0;
+}
+
+
+    </style>
+    </head>
+    <body>
+      <!-- Main content container -->
+  <div class="content-container">
+    <header class="post-header">
+      <h1>The Sound of Loneliness</h1>
+      <p class="post-date" id="postDate"></p>
+    </header>
+
+    <article class="post-content">
+      <p class="post-summary">
+        The dark room was silent, except for an old diary lying on the table—one she had stopped writing in years ago. 
+        Every page held memories she wished to forget, yet they refused to fade.
+      </p>
+
+      
+      <p class="post-body">
+        The weight of the past hung heavy in the air, 
+        as if the room itself was holding onto the fragments of her life that had been lost.
+      </p>
+      
+      <p class="post-body">
+        She had kept the diary for years, a place where she poured out her soul, writing about the dreams she once had, the love she once believed in, and the person she used to be. Each entry was like a window into her heart, revealing the raw emotions she had tried to bury. But as the years passed, the entries became less frequent, the words slower, as though even the diary could no longer bear the weight of her thoughts. Eventually, she stopped writing altogether, 
+        unable to confront the sadness that lingered in every word she wrote.
+</p>
+      <p class="post-body">
+        onight, the loneliness seemed louder than ever. The silence was deafening. She stood by the window, staring out at the darkened world beyond. The streets were empty, and the sky above was a blanket of gray, the stars hidden by the clouds. It was a reflection of how she felt—lost in a world where she no longer belonged, 
+        trapped in a life that felt like a dream she could never wake up from.
+      </p>
+
+      <p class="post-body">
+
+
+        Her eyes fell back to the diary on the table. She hadn’t opened it in years,
+         but tonight, something urged her to. She approached the table, the leather cover 
+         of the diary worn with time, the pages yellowed with age. As she touched it, 
+         a shiver ran down her spine. She hesitated for a moment, unsure if she was ready to 
+         face the ghosts of her past. But the pull was too strong.
+
+      <p class="post-body">
+
+        She opened the diary, and the familiar scent of old paper filled the air. 
+        The first page was a memory she had tried to forget, the day she met him. 
+        Her handwriting was bold and hopeful, filled with excitement and the promise of a 
+        future she thought was destined. "I met him today, and something about him felt like home.
+         I don’t know what it is, but I know I will never be the same.
+      </p>
+
+      <p class="post-body">
+
+        Her fingers lingered on the words, but the feeling they once held now seemed foreign. 
+        The person who had written those words no longer existed. That girl was gone, replaced by someone who had learned 
+        the hard way that promises were often broken, and that not all love was meant to last.
+         She flipped through the pages, each one a reflection of the joy, the heartbreak, and the slow unraveling of a dream.
+      </p>
+      <p class="post-body">
+
+        There was the entry about their first fight, the one where she felt his love slipping away, 
+        and another about the days he would disappear without explanation, leaving her with nothing 
+        but unanswered questions. Her heart ached as she read, the pain of those moments rushing back 
+        like a tide she could never outrun. The last entry was the hardest to read, the words shaky and uncertain. 
+        "I don’t know how much longer I can do this. 
+        I feel like I’m losing him, and I don’t know if I can keep pretending everything is fine."
+      </p>
+
+      <p class="post-body">
+
+        And then, there was silence. No more words. The pages after that were blank, as though the story had ended before 
+        it could even be completed. The diary, 
+        once so full of life, was now a reminder of what had been lost—of a love that had faded, of dreams that had been shattered.
+      </p>
+      <p class="post-body">
+
+        She closed the diary with a sigh, the weight of the past pressing down on her chest. The silence in the room grew louder, and for the first time in a long while, she allowed herself to feel it—the loneliness that had become her constant companion. She had built walls around herself, afraid to open up, afraid to feel the pain that had once consumed her. But tonight, it all came rushing back, 
+        the memories, the hurt, the longing for something she could never have. to be continues
+      </p>
+</article>
+</div>
+<section id="comments">
+    <h2>Comments</h2>
+    <div class="comment-table">
+        <div class="comment-card">
+            <div class="comment-header">
+                <span class="name">Ahmer Khan</span>
+                <span class="date">14 Feb, 2025</span>
+            </div>
+            <p class="comment">Great article, I learned a lot!</p>
+        </div>
+
+        <div class="comment-card">
+            <div class="comment-header">
+                <span class="name">Ahsan Khan</span>
+                <span class="date">Feb 23, 2025</span>
+            </div>
+            <p class="comment">Thanks for sharing your knowledge!</p>
+        </div>
+
+        <div class="comment-card">
+            <div class="comment-header">
+                <span class="name">Ali HASSAN</span>
+                <span class="date">15 Feb, 2025</span>
+            </div>
+            <p class="comment">Very informative, keep it up!</p>
+        </div>
+    </div>
+</section>
+
+<footer id="footer">
+  <div class="footer-container">
+      <div class="footer-content">
+          <div class="footer-logo">
+              <h2>MyWebsite</h2>
+              <p>Your go-to place for quality content and insights.</p>
+          </div>
+          <div class="footer-links">
+              <h3>Quick Links</h3>
+              <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Contact</a></li>
+              </ul>
+          </div>
+          <div class="footer-social">
+              <h3>Follow Us</h3>
+              <div class="social-icons">
+                  <a href="#"><i class="fab fa-facebook"></i></a>
+                  <a href="#"><i class="fab fa-linkedin"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+          </div>
+          <div class="footer-newsletter">
+              <h3>Subscribe to Our Newsletter</h3>
+              <form>
+                  <input type="email" placeholder="Enter your email" required>
+                  <button type="submit">Subscribe</button>
+              </form>
+          </div>
+      </div>
+      <div class="footer-bottom">
+          <p>&copy; 2025 MyWebsite. All Rights Reserved.</p>
+      </div>
+  </div>
+</footer>
+<script>
+     document.addEventListener('DOMContentLoaded', function() {
+  const dateElement = document.getElementById('postDate');
+  const customDate = ' 14 Feb  2025'; // Apni desired date yahan likho
+  dateElement.textContent = `Posted on: ${customDate}`;
+});
+  </script>
+    </body>
+    </html>

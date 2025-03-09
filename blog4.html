@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloggers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="#" class="logo" id="logo">Bloggers</a> <!-- Replaced MZMM Blog with Bloggers -->
+        <div class="nav-links" id="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#create-post">Create a Post</a> <!-- Link should go to the Create Post section -->
+            <a href="#footer">About</a>
+        </div>
+        <!-- Hamburger Menu Icon -->
+        <button class="menu-icon" id="menu-icon">&#9776;</button>
+    </div>
+
+
+    <style>
+      /* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Main Content Container */
+.content-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 10px;
+  
+  background-image: linear-gradient(135deg, #f3f4f7, #e0e4e9);
+  transition: all 0.3s ease;
+}
+
+/* Post Header */
+.post-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: 600;
+  color: #2a2a2a;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.post-date {
+  font-size: 1.2em;
+  color: #aaa;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+/* Post Content */
+.post-summary {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.8;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.post-body {
+  font-size: 1.1em;
+  color: #444;
+  margin-bottom: 25px;
+  line-height: 1.8;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+
+
+
+/* Comment Section */
+.comments-section {
+  margin-top: 90px;
+  padding: 70px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 10px;
+  
+}
+
+.comment-table {
+  margin-bottom: 20px;
+}
+
+.comment-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.comment-author {
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 5px;
+}
+
+.comment-text {
+  padding-left: 10px;
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+.comment-form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  resize: none;
+}
+
+.comment-form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.comment-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Post Footer */
+.post-footer {
+  font-size: 1.1em;
+  color: #333;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.author-name {
+  font-weight: 500;
+  color: #007bff;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-container {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 2.2em;
+  }
+
+  .post-summary {
+    font-size: 1.1em;
+  }
+
+  .post-body {
+    font-size: 1em;
+  }
+
+  .post-footer {
+    font-size: 1em;
+  }
+}
+#comments {
+    font-family: 'Arial', sans-serif;
+    margin-top: 40px;
+    padding: 0 20px;
+}
+
+#comments h2 {
+    text-align: center;
+    font-size: 32px;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.comment-table {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.comment-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.comment-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 18px;
+    color: #3498db;
+}
+
+.date {
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+.comment {
+    font-size: 16px;
+    color: #2c3e50;
+    line-height: 1.5;
+}
+
+.comment-card p {
+    margin: 0;
+}
+
+
+    </style>
+    </head>
+    <body>
+      <!-- Main content container -->
+  <div class="content-container">
+    <header class="post-header">
+      <h1>The Last Call</h1>
+      <p class="post-date" id="postDate"></p>
+    </header>
+
+    <article class="post-content">
+      <p class="post-summary">
+        he picked up the phone, hesitating, hoping this time there would be an answer. 
+        But silence was all she got. There were so many things 
+        she wanted to say, but there was no one left to listen. Sometimes, love becomes nothing more than
+      </p>
+
+      
+      <p class="post-body">
+        but now only brought a cold ache. He stared at the phone, the weight of his unspoken 
+        words pressing down on him, knowing deep down that the 
+        person on the other end would never answer again.
+      </p>
+      
+      <p class="post-body">
+        There were so many things he wanted to say. So many apologies, so many regrets. 
+        He wanted to tell her how much he missed her, how the emptiness in his chest 
+        
+        seemed to grow every day without her presence. He wanted to tell her that he never meant 
+        to hurt her, that he never wanted to be the one who left the scars 
+        in her heart. But there was no one left to listen.
+</p>
+      <p class="post-body">
+        Sometimes, love becomes nothing more than a memory, a ghost that haunts the places where it once thrived. He had spent years with her, building a life together, believing that nothing could tear them apart. But time, as it often does, had a way of changing everything. The laughter they once shared was now replaced by silence. 
+        The promises they made to each other now felt like distant echoes, fading away with each passing day.
+      </p>
+
+      <p class="post-body">
+
+
+        He thought about the first time they met, the way her smile had lit up the room, 
+        the way her laughter had been like music to his ears. It seemed like a lifetime ago, 
+        but the memories were still so vivid, so alive in his mind. He had fallen in love with 
+        
+        her in a way that felt like it could never be undone. But somewhere along the way, things had changed. 
+        They had drifted apart, and the distance between them grew wider with every argument, 
+        every unspoken word, every hurt that was never healed.
+
+      <p class="post-body">
+
+        And now, here he was, holding the phone in his hand, unable to make the call that could 
+        somehow make everything right again. The silence was unbearable. It filled the space around him, 
+        suffocating him with its weight. He could feel his heart racing, each beat echoing in the stillness. 
+        He wanted to hear her voice one last time, to know that maybe, just maybe, there was still a chance for them. 
+        But that hope had long since died. The love that once seemed so certain had faded into nothingness,
+         and all that was left was the painful reminder of what could have been.
+      </p>
+
+      <p class="post-body">
+
+        He lowered the phone, his hand trembling. There was no use in calling again. 
+        He had tried so many times before, only to be met with the same empty silence. 
+        She had moved on. She had found a way to live without him, and in a way, he had to do the same. 
+        But that didn’t make it any easier. The longing in his heart was still there, gnawing at him, 
+        reminding him of the life they could have shared, if only things had been different.
+      </p>
+      <p class="post-body">
+
+        As he sat there, lost in the silence, he realized something. Sometimes, love becomes nothing more than a shadow of what it once was. It lingers, but it no longer has the power to heal, to fix what was broken. The last call, the one he had made, 
+        was nothing more than a final attempt to cling to something that was already gone.
+      </p>
+
+      <p class="post-body">
+
+        He stood up, placing the phone back on the table. The weight in his chest felt 
+        unbearable, but he knew that this was the end. The chapter was over. The story had been written, 
+        and there was nothing more to say. He had done everything he could, but sometimes, 
+        even love isn’t enough to bring two people back together.
+      </p>
+      <p class="post-body">
+
+        He walked away from the phone, from the past, and into the quiet future that awaited him. 
+        And as the room grew darker, he found a strange peace in knowing that sometimes, 
+        love doesn’t last forever. It fades, it slips away, and all that’s left is the silence.
+
+The last call had been made, and there was no turning back.
+      </p>
+</article>
+</div>
+<section id="comments">
+    <h2>Comments</h2>
+    <div class="comment-table">
+        <div class="comment-card">
+            <div class="comment-header">
+                <span class="name">John Doe</span>
+                <span class="date"> 25 Feb, 2025</span>
+            </div>
+            <p class="comment">Great article, I learned a lot!</p>
+        </div>
+
+        <div class="comment-card">
+            <div class="comment-header">
+                <span class="name">Jane Smith</span>
+                <span class="date">March 4, 2025</span>
+            </div>
+            <p class="comment">Thanks for sharing your knowledge!</p>
+        </div>
+
+        <div class="comment-card">
+            <div class="comment-header">
+                <span class="name">Ali Khan</span>
+                <span class="date">March 3, 2025</span>
+            </div>
+            <p class="comment">Very informative, keep it up!</p>
+        </div>
+    </div>
+</section>
+
+<footer id="footer">
+  <div class="footer-container">
+      <div class="footer-content">
+          <div class="footer-logo">
+              <h2>MyWebsite</h2>
+              <p>Your go-to place for quality content and insights.</p>
+          </div>
+          <div class="footer-links">
+              <h3>Quick Links</h3>
+              <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Contact</a></li>
+              </ul>
+          </div>
+          <div class="footer-social">
+              <h3>Follow Us</h3>
+              <div class="social-icons">
+                  <a href="#"><i class="fab fa-facebook"></i></a>
+                  <a href="#"><i class="fab fa-linkedin"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+          </div>
+          <div class="footer-newsletter">
+              <h3>Subscribe to Our Newsletter</h3>
+              <form>
+                  <input type="email" placeholder="Enter your email" required>
+                  <button type="submit">Subscribe</button>
+              </form>
+          </div>
+      </div>
+      <div class="footer-bottom">
+          <p>&copy; 2025 MyWebsite. All Rights Reserved.</p>
+      </div>
+  </div>
+</footer>
+<script>
+     document.addEventListener('DOMContentLoaded', function() {
+  const dateElement = document.getElementById('postDate');
+  const customDate = ' 17 Feb  2025'; // Apni desired date yahan likho
+  dateElement.textContent = `Posted on: ${customDate}`;
+});
+  </script>
+    </body>
+    </html>

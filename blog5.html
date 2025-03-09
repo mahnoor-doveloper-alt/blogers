@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloggers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="#" class="logo" id="logo">Bloggers</a> <!-- Replaced MZMM Blog with Bloggers -->
+        <div class="nav-links" id="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#create-post">Create a Post</a> <!-- Link should go to the Create Post section -->
+            <a href="#footer">About</a>
+        </div>
+        <!-- Hamburger Menu Icon -->
+        <button class="menu-icon" id="menu-icon">&#9776;</button>
+    </div>
+
+
+    <style>
+      /* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Main Content Container */
+.content-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 10px;
+  
+  background-image: linear-gradient(135deg, #f3f4f7, #e0e4e9);
+  transition: all 0.3s ease;
+}
+
+/* Post Header */
+.post-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: 600;
+  color: #2a2a2a;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.post-date {
+  font-size: 1.2em;
+  color: #aaa;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+/* Post Content */
+.post-summary {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.8;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.post-body {
+  font-size: 1.1em;
+  color: #444;
+  margin-bottom: 25px;
+  line-height: 1.8;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+
+
+
+/* Comment Section */
+.comments-section {
+  margin-top: 90px;
+  padding: 70px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 10px;
+  
+}
+
+.comment-table {
+  margin-bottom: 20px;
+}
+
+.comment-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.comment-author {
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 5px;
+}
+
+.comment-text {
+  padding-left: 10px;
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+.comment-form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  resize: none;
+}
+
+.comment-form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.comment-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Post Footer */
+.post-footer {
+  font-size: 1.1em;
+  color: #333;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.author-name {
+  font-weight: 500;
+  color: #007bff;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-container {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 2.2em;
+  }
+
+  .post-summary {
+    font-size: 1.1em;
+  }
+
+  .post-body {
+    font-size: 1em;
+  }
+
+  .post-footer {
+    font-size: 1em;
+  }
+}
+#comments {
+    font-family: 'Arial', sans-serif;
+    margin-top: 40px;
+    padding: 0 20px;
+}
+
+#comments h2 {
+    text-align: center;
+    font-size: 32px;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.comment-table {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.comment-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.comment-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 18px;
+    color: #3498db;
+}
+
+.date {
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+.comment {
+    font-size: 16px;
+    color: #2c3e50;
+    line-height: 1.5;
+}
+
+.comment-card p {
+    margin: 0;
+}
+
+
+    </style>
+    </head>
+    <body>
+      <!-- Main content container -->
+  <div class="content-container">
+    <header class="post-header">
+      <h1>Fading Footsteps</h1>
+      <p class="post-date" id="postDate"></p>
+    </header>
+
+    <article class="post-content">
+      <p class="post-summary">
+        She walked down the familiar street, her footsteps slow, hesitant. Every corner 
+        held a memory—his laughter echoing in the wind, his shadow in every passing stranger. 
+        But today, the street felt different, 
+        emptier. Maybe it wasn’t the place that had changed.Maybe it was her.
+      </p>
+
+      
+      <p class="post-body">
+        She paused at the corner where they had once stood, laughing under the flickering streetlight. 
+        The moment was frozen in her mind, as if she could reach out and touch the happiness they once shared. 
+        His smile, so bright and full of life, had made everything feel possible. 
+        They had dreams then—dreams of growing old together, of finding forever in each other’s eyes.
+         But forever had slipped through their fingers like sand, and now, 
+        standing there alone, she could feel the weight of all that had been lost.
+      </p>
+      
+      <p class="post-body">
+        The street, once so full of life, now felt hollow. The familiar rhythm of her life had been disrupted, and she couldn’t help but wonder how things had changed so suddenly. It had been months, but the ache in her chest still felt as raw as the day he had walked away. The sound of his footsteps had faded from her memory, 
+        like the last echoes of a song you once loved but could no longer remember.
+      <p class="post-body">
+        She continued walking, past the coffee shop where they used to sit for hours, talking about everything and nothing. She could almost hear their voices, a soft hum of conversation, mixed with the clink of mugs and the rustle of paper. But now, the café was silent, the windows reflecting only her own image, 
+        a lone figure walking past a place that once felt like home.
+      </p>
+
+      <p class="post-body">
+
+
+        Every step seemed to take her further from the person she used to be, 
+        and she wasn’t sure if that person would ever return. Was it the street that had changed,
+         or was it her heart? Her heart, once full of love and hope, now felt like a shadow of its former
+          self—empty, hollow, and fragile. She tried to grasp onto the memories, 
+        but they slipped away, like trying to hold onto the wind.
+
+      <p class="post-body">
+
+        At the end of the street, she stopped. This was where they had said goodbye. The spot where everything had come crashing down, where all their plans and dreams had unraveled. It wasn’t dramatic, no final tear-filled confession or angry words. 
+        It had been a quiet, painful farewell—one that left her with more questions than answers.
+      </p>
+
+      <p class="post-body">
+
+        She closed her eyes, letting the breeze caress her face, as if it could ease the ache inside her. She could still remember the way he had held her hand that day, the way he had looked at her with those eyes that once seemed so full of love, now distant and uncertain. She wondered if he missed her, 
+        if he thought about her the way she thought about him. But she knew deep down that it didn’t matter anymore.
+      </p>
+      <p class="post-body">
+
+        Things had changed. She had changed.
+
+The street was still the same. The houses, the trees, the streetlights—everything was as it had always been. But the memories that once filled these streets were now fading, leaving only a hollow echo of what had been.
+ She had tried to hold onto them, but just like the fading footsteps behind her, they were slipping away.
+      </p>
+
+      <p class="post-body">
+
+        With one final glance at the street she had walked countless times, she turned and walked in the opposite direction. The sound of her footsteps, once so sure, now felt tentative, uncertain, 
+        as though she wasn’t quite sure where she was going anymore.
+      </p>
+      <p class="post-body">
+
+        And as she walked away, she realized something. Sometimes, you have to leave the past behind, not because you want to, but because it no longer fits who you are becoming. The footsteps may fade, but new ones would eventually form,
+         leading her to a place where the past no longer held sway. to be continues.
+      </p>
+</article>
+</div>
+<section id="comments">
+    <h2>Comments</h2>
+    <div class="comment-table">
+        <div class="comment-card">
+            <div class="comment-header">
+                <span class="name">John Doe</span>
+                <span class="date">March 5, 2025</span>
+            </div>
+            <p class="comment">Great article, I learned a lot!</p>
+        </div>
+
+        <div class="comment-card">
+            <div class="comment-header">
+                <span class="name">Jane Smith</span>
+                <span class="date">28 Feb, 2025</span>
+            </div>
+            <p class="comment">Thanks for sharing your knowledge!</p>
+        </div>
+
+        <div class="comment-card">
+            <div class="comment-header">
+                <span class="name">Ali Khan</span>
+                <span class="date">March 3, 2025</span>
+            </div>
+            <p class="comment">Very informative, keep it up!</p>
+        </div>
+    </div>
+</section>
+
+<footer id="footer">
+  <div class="footer-container">
+      <div class="footer-content">
+          <div class="footer-logo">
+              <h2>MyWebsite</h2>
+              <p>Your go-to place for quality content and insights.</p>
+          </div>
+          <div class="footer-links">
+              <h3>Quick Links</h3>
+              <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Contact</a></li>
+              </ul>
+          </div>
+          <div class="footer-social">
+              <h3>Follow Us</h3>
+              <div class="social-icons">
+                  <a href="#"><i class="fab fa-facebook"></i></a>
+                  <a href="#"><i class="fab fa-linkedin"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+          </div>
+          <div class="footer-newsletter">
+              <h3>Subscribe to Our Newsletter</h3>
+              <form>
+                  <input type="email" placeholder="Enter your email" required>
+                  <button type="submit">Subscribe</button>
+              </form>
+          </div>
+      </div>
+      <div class="footer-bottom">
+          <p>&copy; 2025 MyWebsite. All Rights Reserved.</p>
+      </div>
+  </div>
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+  const dateElement = document.getElementById('postDate');
+  const customDate = ' 23 Feb  2025'; // Apni desired date yahan likho
+  dateElement.textContent = `Posted on: ${customDate}`;
+});
+  </script>
+    </body>
+    </html>

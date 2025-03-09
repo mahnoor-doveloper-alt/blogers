@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloggers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="#" class="logo" id="logo">Bloggers</a> <!-- Replaced MZMM Blog with Bloggers -->
+        <div class="nav-links" id="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#create-post">Create a Post</a> <!-- Link should go to the Create Post section -->
+            <a href="#footer">About</a>
+        </div>
+        <!-- Hamburger Menu Icon -->
+        <button class="menu-icon" id="menu-icon">&#9776;</button>
+    </div>
+
+
+    <style>
+      /* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Main Content Container */
+.content-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 10px;
+  
+  background-image: linear-gradient(135deg, #f3f4f7, #e0e4e9);
+  transition: all 0.3s ease;
+}
+
+/* Post Header */
+.post-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: 600;
+  color: #2a2a2a;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.post-date {
+  font-size: 1.2em;
+  color: #aaa;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+/* Post Content */
+.post-summary {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.8;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.post-body {
+  font-size: 1.1em;
+  color: #444;
+  margin-bottom: 25px;
+  line-height: 1.8;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+
+
+
+/* Comment Section */
+.comments-section {
+  margin-top: 90px;
+  padding: 70px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 10px;
+  
+}
+
+.comment-table {
+  margin-bottom: 20px;
+}
+
+.comment-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.comment-author {
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 5px;
+}
+
+.comment-text {
+  padding-left: 10px;
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+.comment-form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  resize: none;
+}
+
+.comment-form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.comment-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Post Footer */
+.post-footer {
+  font-size: 1.1em;
+  color: #333;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.author-name {
+  font-weight: 500;
+  color: #007bff;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-container {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 2.2em;
+  }
+
+  .post-summary {
+    font-size: 1.1em;
+  }
+
+  .post-body {
+    font-size: 1em;
+  }
+
+  .post-footer {
+    font-size: 1em;
+  }
+}
+#comments {
+    font-family: 'Arial', sans-serif;
+    margin-top: 40px;
+    padding: 0 20px;
+}
+
+#comments h2 {
+    text-align: center;
+    font-size: 32px;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.comment-table {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.comment-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.comment-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 18px;
+    color: #3498db;
+}
+
+.date {
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+.comment {
+    font-size: 16px;
+    color: #2c3e50;
+    line-height: 1.5;
+}
+
+.comment-card p {
+    margin: 0;
+}
+
+
+    </style>
+    </head>
+    <body>
+      <!-- Main content container -->
+  <div class="content-container">
+    <header class="post-header">
+      <h1>A Sky Full of Goodbyes</h1>
+      <p class="post-date" id="postDate"></p>
+    </header>
+
+    <article class="post-content">
+      <p class="post-summary">
+        She sat on the rooftop, staring at the night sky. The stars twinkled, distant yet familiar, reminding her of the dreams they once shared. “We’ll reach the stars together,” he had promised. 
+        His words, once so full of hope, now felt like a distant memory, lost in the vastness of the universe.
+      </p>
+
+      
+      <p class="post-body">
+        The sky above was clear, endless, just as it had been the night they had sat there together, talking about their future. They had planned everything—how they would travel the world, chase their dreams, and one day, stand under the same sky, hand in hand, and look at the stars together. It all seemed so real, so possible. 
+        They had believed in it, in each other. But somewhere along the way, something changed.
+      </p>
+      
+      <p class="post-body">
+        She closed her eyes, letting the cool night air wash over her, as though it could cleanse the ache in her heart. 
+        She could still remember the last time they had sat here, side by side, gazing at the same stars, the future feeling 
+        so close, so tangible. He had promised that no matter what, they would always be together,
+         that nothing could ever tear them apart.
+      </p>
+
+      <p class="post-body">
+
+        But promises had been broken. The distance between them had grown with every passing day, and soon, those dreams they had shared turned into painful reminders of what could have been. She had waited for him to return, to fulfill the promise he had made, but he never came back. 
+        The space beside her remained empty, just as the dreams they had once built together had turned to dust.
+
+        </p>
+
+      <p class="post-body">
+        The stars that once seemed so full of possibility now felt like distant strangers. She had tried to hold onto the idea of them, to the hope that one day he would come back and they would still chase those dreams together. But the truth was, she couldn’t keep waiting forever. 
+        Time had moved on, and so had he. She had to let go, even if it meant accepting that some dreams are never meant to come true.
+
+        
+      </p>
+
+      <p class="post-body">
+        The sky was full of stars, but none of them shone the way they used to. 
+        They were the same, yet different—just like her. She had changed, grown stronger in ways she hadn’t thought possible. The pain of losing him still lingered, but she had learned to live with it, to 
+        let the memories of their shared dreams fade into the background of her life.
+        
+      </p>
+
+      <p class="post-body">
+        Tears welled up in her eyes, but she didn’t let them fall. She didn’t need to cry anymore. 
+        The goodbye had already been said, without words, without ceremony. It had been a slow goodbye, a goodbye that had stretched over months, then years. But now, 
+        sitting alone on the rooftop, she realized that sometimes, letting go was the hardest, but the only way forward.
+        
+      </p>
+      <p class="post-body">
+
+        She took one last look at the stars, the silent witnesses to their promises and their goodbyes. She whispered a quiet farewell, not just to him, but to the version of herself that still believed 
+        
+    in their dream. It was time to move on, time to find new dreams, new stars to chase.
+      </p>
+
+      <p class="post-body">
+        The sky was full of goodbyes, but also of new beginnings. And though she would always carry the memory of what they had, she knew that the stars were not the end. They were just another chapter in the story of her life, 
+        a life that was still waiting to unfold, filled with endless possibilities.
+        
+      </p>
+      <p class="post-body">
+
+        With a final breath, she stood up, leaving the rooftop behind.
+         The night was still young, and so was she. The stars above her would 
+         always be there, but now, she was ready to find her own way, guided by the light of a thousand new dreams.
+      </p>
+</article>
+</div>
+<section id="comments">
+    <h2>Comments</h2>
+    <div class="comment-table">
+        <div class="comment-card">
+            <div class="comment-header">
+                <span class="name">WILLUM</span>
+                <span class="date">March 1, 2025</span>
+            </div>
+            <p class="comment">Amazing heart tuching!</p>
+        </div>
+
+        <div class="comment-card">
+            <div class="comment-header">
+                <span class="name">HURRY</span>
+                <span class="date">March 5, 2025</span>
+            </div>
+            <p class="comment">Thanks for sharing your knowledge!</p>
+        </div>
+
+        <div class="comment-card">
+            <div class="comment-header">
+                <span class="name">HASSAN</span>
+                <span class="date">Feb 28, 2025</span>
+            </div>
+            <p class="comment">Very informative, keep it up!</p>
+        </div>
+    </div>
+</section>
+
+<footer id="footer">
+  <div class="footer-container">
+      <div class="footer-content">
+          <div class="footer-logo">
+              <h2>MyWebsite</h2>
+              <p>Your go-to place for quality content and insights.</p>
+          </div>
+          <div class="footer-links">
+              <h3>Quick Links</h3>
+              <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Contact</a></li>
+              </ul>
+          </div>
+          <div class="footer-social">
+              <h3>Follow Us</h3>
+              <div class="social-icons">
+                  <a href="#"><i class="fab fa-facebook"></i></a>
+                  <a href="#"><i class="fab fa-linkedin"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+          </div>
+          <div class="footer-newsletter">
+              <h3>Subscribe to Our Newsletter</h3>
+              <form>
+                  <input type="email" placeholder="Enter your email" required>
+                  <button type="submit">Subscribe</button>
+              </form>
+          </div>
+      </div>
+      <div class="footer-bottom">
+          <p>&copy; 2025 MyWebsite. All Rights Reserved.</p>
+      </div>
+  </div>
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+  const dateElement = document.getElementById('postDate');
+  const customDate = ' 27 Feb  2025'; // Apni desired date yahan likho
+  dateElement.textContent = `Posted on: ${customDate}`;
+});
+  </script>
+    </body>
+    </html>
